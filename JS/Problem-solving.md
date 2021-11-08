@@ -17,9 +17,11 @@
 
 After the loop has finished, the variable minimum will contain the minimum number
 
-### task find the maximum in an array
+### task: find the maximum in an array
 
-#### Logic: similar to 'find the minimum' task. The only difference is that
+#### Logic: 
+
+similar to 'find the minimum' task. The only difference is that
 1. now we should compare a number to a minimum number.
 2. If the number that is being checked is greater than minimum number then this is the maximum number.
 3. Do the same for all the numbers in the array.
@@ -49,7 +51,9 @@ the only difference that we need to select the specific key of the object that c
 
 ### task: find the maximum in an array of objects
 
-#### Logic: the logic is identical with finding the minimum in an array of numbers.
+#### Logic: 
+
+the logic is identical with finding the minimum in an array of numbers.
 the only difference that we need to select the specific key of the object that contains the desired number
 
 ```
