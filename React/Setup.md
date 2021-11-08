@@ -1,5 +1,4 @@
-*******************************************************
-Task: setup a React Project
+### Task: setup a React Project
 
 1. go to the directory you have chosen
 2. npx create-react-app nameofyourProject
@@ -10,4 +9,3 @@ Task: setup a React Project
 4. type code nameofyourProject (will open your project with VS code)
 5. in VS code, at the top menu press 'Terminal' and then 'New Terminal' (will open a new terminal in VS code)
 6. In the terminal npm start (will start your project in your browser)
-
