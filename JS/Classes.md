@@ -4,7 +4,7 @@
 class ClassName {}
 ```
 
-### task create a method inside a class
+### task: create a method inside a class
 
 ```
 class ClassName {
