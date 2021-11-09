@@ -130,6 +130,11 @@ for (let i = 0; i < array.length; i++) {
 	if (array[i].key > minimum ) minimum = array[i].key
 }
 
+
+/**
+ * UNDER DEVELOPMENT
+ */
+
 // ### task: find a max in an array which is inside an object with array
 
 // task: sort an array
