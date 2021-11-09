@@ -42,3 +42,11 @@ function someFunctionName(anontherFunction) {
 }
 
 ```
+
+### task: accept an unknown number of parameters in a function 
+
+```
+function functionName(...unknownNumberOfParameters) {
+    
+}
+```
