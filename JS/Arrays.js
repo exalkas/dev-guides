@@ -27,6 +27,12 @@ const someArrayName = [true, false, false, true]
 const someArrayName = ['alkis', 'john', 'day', 'night']
 
 /**
+ * Task: Create an array of arrays
+ */
+
+const someArrayName = [[1, 2], [2, 3], [4, 5]]
+
+/**
  * Task: find the index of an item in an array
  * 
  * If one needs has a single value (number, string etc) to find the index of it in an array,
@@ -137,8 +143,49 @@ for (let i = 0; i < array.length; i++) {
 
 // ### task: find a max in an array which is inside an object with array
 
-// task: sort an array
-// task: sort an array with objects
+/**
+ * task: sort an array
+ * 
+ * the sort() method accepts a function. When no function is provided, 
+ * it converts the array items to string and then sorts them and sorts them only 
+ * in ascending order
+ * 
+ * N.B. the sort method sorts the elements in place - thus it mutates the array
+ */ 
+
+ const letters = ['a', 'd', 'e', 'z', 'b']
+
+ letters.sort() 
+
+
+/**
+ * task: sort an array with objects
+ */
+
+ const items = [
+	{name: 'Abc', age: 20},
+	{name: 'Gba', age: 80},
+	{name: 'Zba', age: 40},
+	{name: 'Oba', age: 10},
+  ]
+
+items.sort(function (a, b) {
+
+  const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+  const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+  
+  if (nameA < nameB) { // if a > b -> a before b
+    return -1; // reverse (change to 1) for descending order
+  }
+ 
+  if (nameA > nameB) { // if b > a -> b before a
+    return 1; // reverse (change to -1) for descending order
+  }
+
+  // names must be equal
+  //if a = b then they are left untouched  
+  return 0;
+});
 
 // find index
 // find which
