@@ -25,8 +25,9 @@ if( process.env.NODE_ENV === 'production' ) {
  https://devcenter.heroku.com/articles/heroku-command-line \
  and install it
 2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal:  
-`heroku login`
-3. if there is not git initialized in the project, execute the following 3 commands:   
+`heroku login` \
+and follow the instrcutions shown there
+3. if there is no git initialized in the project, execute the following 3 commands:   
    
    `git init` \
    `git add .`\
