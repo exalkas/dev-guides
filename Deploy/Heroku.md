@@ -2,22 +2,27 @@
 
 **MUST**: use heroku login for a client server app
 
-**Make sure your server includes the following lines** at the **END** of your server file: \
+**Make sure your server includes the following lines** at the **END** of your server file: 
 
-`app.use(express.static('client/build'));
+```
+app.use(express.static('client/build'));
+
 if( process.env.NODE_ENV === 'production' ) {
+
     const path = require('path');
+
     app.get('/*',(req,res)=>{
         res.sendFile(path.resolve(__dirname,'../client','build','index.html'));
-}`
 
+}
+```
 
 ### STEPS:
 
 1. Download Heroku CLI from here:\
  https://devcenter.heroku.com/articles/heroku-command-line \
  and install it
-2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal: \ 
+2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal:  
 `heroku login`
 3. if there is not git initialized in the project, execute the following 3 commands:   
    
