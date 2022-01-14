@@ -11,15 +11,17 @@ if( process.env.NODE_ENV === 'production' ) {
 
     const path = require('path');
 
-    app.get('/*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'../client','build','index.html'));
+    app.get('/*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
 
 }
 ```
 
 ### STEPS:
 
-1. Download Heroku CLI from here:\
+1. Create a Heroku app from your Heroku Dashboard. 
+2. Write down the app name - you will need it at step #5
+3. Download Heroku CLI from here:\
  https://devcenter.heroku.com/articles/heroku-command-line \
  and install it
 2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal:  
