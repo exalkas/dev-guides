@@ -4,15 +4,12 @@
 
 **Make sure your server includes the following lines** at the **END** of your server file: \
 
-`app.use(express.static('client/build')) //It serves static files and is based on serve-static.where are the static files. where are the static files`
-
-`if( process.env.NODE_ENV === 'production' ){ //if it's production environment`
-    
-    `const path = require('path');`
-    `app.get('/*',(req,res)=>{`
-        `res.sendFile(path.resolve(__dirname,'../client','build','index.html')) //send file index.html`
-    `})`
-`}`
+`app.use(express.static('client/build'));
+if( process.env.NODE_ENV === 'production' ) {
+    const path = require('path');
+    app.get('/*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'../client','build','index.html'));
+}`
 
 
 ### STEPS:
@@ -22,14 +19,14 @@
  and install it
 2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal: \ 
 `heroku login`
-3. if there is not git initialized in the project, execute the following 3 commands: \  
+3. if there is not git initialized in the project, execute the following 3 commands:   
    
    `git init` \
    `git add .`\
    `git commit -m "first commit"`
 4. if you need to use main branch, then type the following: \
 `git checkout -b main` \
-`git branch -D master` to delete master branch \
+`git branch -D master` to delete master branch
 
 5. then type the following command:\
  `heroku git:remote -a nameoftheappinheroku`
@@ -39,7 +36,7 @@
 
 ---
 
-### When all these steps are completed then ADD ANY ENV VARIABLES your project may use
+### When all these steps are completed then ADD to Heroku ANY ENV VARIABLES your project may use
 ---
 
 After successful deployment, every time you will be applying changes to your project, you will need to update your git and then `git push heroku master` 
