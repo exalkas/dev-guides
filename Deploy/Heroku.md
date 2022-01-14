@@ -1,23 +1,46 @@
-#Deploy a Client - Server App to Heroku
+# Deploy a Client - Server App to Heroku
 
-**MUST**: use heroku login for a client server app:
+**MUST**: use heroku login for a client server app
+
+**Make sure your server includes the following lines** at the **END** of your server file: \
+
+`app.use(express.static('client/build')) //It serves static files and is based on serve-static.where are the static files. where are the static files`
+
+`if( process.env.NODE_ENV === 'production' ){ //if it's production environment`
+    
+    `const path = require('path');`
+    `app.get('/*',(req,res)=>{`
+        `res.sendFile(path.resolve(__dirname,'../client','build','index.html')) //send file index.html`
+    `})`
+`}`
+
+
+### STEPS:
 
 1. Download Heroku CLI from here:\
  https://devcenter.heroku.com/articles/heroku-command-line \
  and install it
-2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal:\ 
+2. FROM A WINDOWS terminal (or Linux) not from a VS Code terminal: \ 
 `heroku login`
-3. if there is not git initialized in the project, execute the following 3 commands:\  
+3. if there is not git initialized in the project, execute the following 3 commands: \  
    
-   `git init`\
+   `git init` \
    `git add .`\
-   `git commit -m "first commit"`\
-4. if you need to use main branch, then type the following:\
-`git checkout -b main`\
-`git branch -D master` to delete master branch\
+   `git commit -m "first commit"`
+4. if you need to use main branch, then type the following: \
+`git checkout -b main` \
+`git branch -D master` to delete master branch \
 
 5. then type the following command:\
  `heroku git:remote -a nameoftheappinheroku`
 6. and then the following command:\
 `git push heroku main` in case you are using main branch or\
 `git push heroku master` in case you are using master branch
+
+---
+
+### When all these steps are completed then ADD ANY ENV VARIABLES your project may use
+---
+
+After successful deployment, every time you will be applying changes to your project, you will need to update your git and then `git push heroku master` 
+
