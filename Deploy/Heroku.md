@@ -13,7 +13,7 @@ if( process.env.NODE_ENV === 'production' ) {
 
     app.get('/*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
-
+    });
 }
 ```
 
@@ -42,6 +42,11 @@ and follow the instrcutions shown there
 `git push heroku main` in case you are using main branch or\
 `git push heroku master` in case you are using master branch
 
+Optional: If you are still getting problems, try adding these 2 lines in your `package.json`:
+```
+"heroku-prebuild": "npm install && cd client && npm install && cd ../ && cd server && npm install",
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build --prefix client",
+```
 ---
 
 ### When all these steps are completed then ADD to Heroku ANY ENV VARIABLES your project may use
